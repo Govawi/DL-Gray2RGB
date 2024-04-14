@@ -1,7 +1,10 @@
-# DL-Gray2RGB
+### Gray2RGB algorithm
+Preprocessing algorithm to compose an RGB image from multiple grayscale ones
 
-## Folder Structure
+---
 
+Directory structure:
+```
 > - assignment: contains original code
 > - src: our code
 >     - autoencoderIMGProcessing.m    used to train an autoencoder that transform 16 grayscale images into an rgb image
@@ -13,11 +16,10 @@
 > - out_OR contains the output for the original method (percentileIMG)
 > - percentileIMG is the original method used to colorize images
 > - out_ensemble contains two trained networks and enseble results
-
+```
 ## autoencoderIMGPocessing.m
-
-### Autoencoder Structure
-
+**Autoencoder Structure**
+```
 > imageInputLayer     (227x227x16)  <br>
 > convolution2dLayer  (227x227x32)  <br>
 > batchNormalizationLayer           <br>
@@ -36,21 +38,16 @@
 > leakyReluLayer                    <br>
 > convolution2dLayer  (227x227x16)  <br>
 > regressionLayer                   <br>
-
-### Code
-
-> #### Part 1 [20-64]
-> Convert original dataset into images block of size 227x227x16
-
-> #### Part 2 [66-108]
-> Train an autoencoder
-
-> #### Part 3 [112-142]
-> Extract colorized images from the central layer of the autoencoder with dimensions 227x227x3
+```
+**Code**
+- Part 1 [20-64] : Convert original dataset into images block of size 227x227x16
+- Part 2 [66-108] : Train an autoencoder
+- Part 3 [112-142] : Extract colorized images from the central layer of the autoencoder with dimensions 227x227x3
 
 ## training_RESNET50.m
-
-> load the pretrained RESNET50 and replace the last 3 layers with:
+load the pretrained RESNET50 and replace the last 3 layers with:
+```
 > - fullyconnected
 > - softmax
 > - classification
+```
