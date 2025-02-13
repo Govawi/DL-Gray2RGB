@@ -1,6 +1,6 @@
 ### Gray2RGB algorithm
 Preprocessing algorithm to compose an RGB image from multiple grayscale ones
-
+ 
 ---
 
 Directory structure:
